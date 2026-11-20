@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Įranga ir data – Didelės akys kalnų kurortas</title>
+  <meta name="description" content="Pasirinkite slidinėjimo įrangą, savaitgalio datą ir seansą Didelės akys kalnų kurorte.">
+  <link rel="stylesheet" href="css/attractions.css">
+  <link rel="stylesheet" href="css/gear.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Pereiti prie turinio</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Didelės akys kalnų kurortas, pradžia">
+        <span class="brand-name">Didelės akys</span>
+        <span class="brand-sub">Kalnų kurortas</span>
+      </a>
+      <nav class="header-nav" aria-label="Pagrindinė naršymo juosta">
+        <a class="nav-link nav-hide-sm" href="#">Prisijungti</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <section class="page-intro" aria-labelledby="page-title">
+      <p class="eyebrow">02 / Įranga ir data</p>
+      <h1 id="page-title">Pasiruoškite kalnų dienai</h1>
+      <div class="intro-row">
+        <p class="lead">Pridėkite įrangos, pasirinkite savaitgalio datą ir jums tinkantį seansą.</p>
+        <ol class="steps" aria-label="Rezervavimo žingsniai">
+          <li><a href="attractions.html">1 Pramogos</a></li>
+          <li aria-current="step">2 Įranga ir data</li>
+          <li>3 Rezervacija</li>
+        </ol>
+      </div>
+    </section>
+
+    <form class="booking" id="booking-form" action="#" method="post">
+      <div class="stack">
+
+        <!-- 1. Gear -->
+        <section class="panel" aria-labelledby="gear-title">
+          <div class="panel-head"><span class="panel-num">01</span><h2 id="gear-title">Pasirinkite įrangą</h2></div>
+          <p class="panel-sub">Galite atsinešti savo įrangą arba išsinuomoti ją papėdėje. Nuoma skaičiuojama už dieną.</p>
+
+          <ul class="gear-list" id="gear-list">
+            <li class="gear" data-id="ski-set" data-name="Slidžių komplektas" data-price="40" data-size="boot">
+              <div class="gear-head"><h3>Slidžių komplektas</h3><p class="gear-price">40 € / dieną</p></div>
+              <p class="gear-desc">Slidės, batai ir lazdos</p>
+              <div class="gear-controls">
+                <select class="gear-size" name="ski-set-size" aria-label="Slidžių komplektas: batų dydis"></select>
+                <div class="stepper">
+                  <button type="button" data-step="-1" aria-label="Slidžių komplektas: mažiau">−</button>
+                  <input type="number" name="ski-set-qty" inputmode="numeric" min="0" max="10" value="0" aria-label="Slidžių komplekto kiekis">
+                  <button type="button" data-step="1" aria-label="Slidžių komplektas: daugiau">+</button>
+                </div>
+              </div>
+              <p class="gear-hint" role="alert">Pasirinkite dydį.</p>
+            </li>
+            <li class="gear" data-id="skis" data-name="Tik slidės" data-price="30" data-size="length">
+              <div class="gear-head"><h3>Tik slidės</h3><p class="gear-price">30 € / dieną</p></div>
+              <p class="gear-desc">Slidės ir lazdos</p>
+              <div class="gear-controls">
+                <select class="gear-size" name="skis-size" aria-label="Tik slidės: ilgis"></select>
+                <div class="stepper">
+                  <button type="button" data-step="-1" aria-label="Slidės: mažiau">−</button>
+                  <input type="number" name="skis-qty" inputmode="numeric" min="0" max="10" value="0" aria-label="Slidžių kiekis">
+                  <button type="button" data-step="1" aria-label="Slidės: daugiau">+</button>
+                </div>
+              </div>
+              <p class="gear-hint" role="alert">Pasirinkite ilgį.</p>
+            </li>
+            <li class="gear" data-id="boots" data-name="Slidinėjimo batai" data-price="20" data-size="boot">
+              <div class="gear-head"><h3>Slidinėjimo batai</h3><p class="gear-price">20 € / dieną</p></div>
+              <p class="gear-desc">Tik batai</p>
+              <div class="gear-controls">
+                <select class="gear-size" name="boots-size" aria-label="Slidinėjimo batai: dydis"></select>
+                <div class="stepper">
+                  <button type="button" data-step="-1" aria-label="Batai: mažiau">−</button>
+                  <input type="number" name="boots-qty" inputmode="numeric" min="0" max="10" value="0" aria-label="Batų kiekis">
+                  <button type="button" data-step="1" aria-label="Batai: daugiau">+</button>
+                </div>
+              </div>
+              <p class="gear-hint" role="alert">Pasirinkite dydį.</p>
+            </li>
+            <li class="gear" data-id="helmet" data-name="Šalmas" data-price="10" data-size="helmet">
+              <div class="gear-head"><h3>Šalmas</h3><p class="gear-price">10 € / dieną</p></div>
+              <p class="gear-desc">Rekomenduojamas kiekvienam slidininkui</p>
+              <div class="gear-controls">
+                <select class="gear-size" name="helmet-size" aria-label="Šalmas: dydis"></select>
+                <div class="stepper">
+                  <button type="button" data-step="-1" aria-label="Šalmas: mažiau">−</button>
+                  <input type="number" name="helmet-qty" inputmode="numeric" min="0" max="10" value="0" aria-label="Šalmų kiekis">
+                  <button type="button" data-step="1" aria-label="Šalmas: daugiau">+</button>
+                </div>
+              </div>
+              <p class="gear-hint" role="alert">Pasirinkite dydį.</p>
+            </li>
+          </ul>
+          <p class="panel-note">Jei žmonėms reikia skirtingų dydžių, darbuotojai juos pritaikys papėdėje.</p>
+        </section>
+
+        <div class="panel-row">
+          <!-- 2. Date (weekends only, built by gear.js) -->
+          <section class="panel" aria-labelledby="date-title">
+            <div class="panel-head"><span class="panel-num">02</span><h2 id="date-title">Pasirinkite datą</h2></div>
+            <p class="panel-sub">Vienos dienos rezervacijos. Kurortas veikia tik šeštadieniais ir sekmadieniais.</p>
+
+            <div class="cal-head">
+              <p class="cal-title" id="cal-title" aria-live="polite"></p>
+              <div class="cal-nav">
+                <button class="btn btn-soft" type="button" id="cal-prev" aria-label="Ankstesnis mėnuo">‹</button>
+                <button class="btn btn-soft" type="button" id="cal-next" aria-label="Kitas mėnuo">›</button>
+              </div>
+            </div>
+
+            <div class="cal-dow" aria-hidden="true"><span>Šeštadienis</span><span>Sekmadienis</span></div>
+            <fieldset class="cal-grid" id="cal-grid">
+              <legend class="sr-only">Savaitgalio datos</legend>
+            </fieldset>
+          </section>
+
+          <!-- 3. Session -->
+          <section class="panel" aria-labelledby="time-title">
+            <div class="panel-head"><span class="panel-num">03</span><h2 id="time-title">Pasirinkite laiką</h2></div>
+            <p class="panel-sub" id="time-sub">Pirmiausia pasirinkite datą · suaugusiųjų kainos</p>
+
+            <fieldset class="sessions" id="sessions">
+              <legend class="sr-only">Seansas</legend>
+              <label class="session">
+                <input type="radio" name="session" value="full-day" data-label="Visa diena" data-hours="09:00–20:00" checked>
+                <span><strong>Visa diena</strong><small>09:00–20:00</small></span>
+                <span class="session-price">30 €</span>
+              </label>
+              <label class="session">
+                <input type="radio" name="session" value="morning" data-label="Rytas" data-hours="09:00–13:00">
+                <span><strong>Rytas</strong><small>09:00–13:00</small></span>
+                <span class="session-price">20 €</span>
+              </label>
+              <label class="session">
+                <input type="radio" name="session" value="evening" data-label="Vakaras" data-hours="16:00–20:00">
+                <span><strong>Vakaras</strong><small>16:00–20:00</small></span>
+                <span class="session-price">25 €</span>
+              </label>
+            </fieldset>
+            <p class="panel-note">Įrangos nuoma skaičiuojama už dieną, o pramogos kaina priklauso nuo seanso.</p>
+          </section>
+        </div>
+
+        <a class="back-link" href="attractions.html"><span aria-hidden="true">←</span> Atgal į pramogas</a>
+
+        <div class="summary" role="region" aria-label="Pasirinkimo santrauka">
+          <div aria-live="polite" aria-atomic="true" id="summary-status">
+            <p class="summary-title" id="sum-title">Pasirinkite datą</p>
+            <p class="summary-detail" id="sum-detail">Įranga nepasirinkta</p>
+          </div>
+          <button class="btn btn-primary btn-lg" id="sum-submit" type="submit" disabled>Tęsti į rezervacija <span aria-hidden="true">→</span></button>
+        </div>
+        <p class="sr-only" id="submit-status" role="status"></p>
+      </div>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <p class="brand-name">Didelės akys</p>
+        <p>Šiek tiek arčiau kalnų.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Apatinė naršymo juosta">
+        <a href="#">Kurortas</a>
+        <a href="#">Kaip atvykti</a>
+        <a href="#">Kontaktai</a>
+        <a href="#">Facebook <span aria-hidden="true">↗</span></a>
+      </nav>
+      <div class="footer-legal">
+        <p>© 2026 Didelės akys kalnų kurortas</p>
+        <nav aria-label="Teisinė informacija">
+          <a href="#">Privatumo politika</a>
+          <a href="#">Taisyklės ir sąlygos</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <noscript>
+    <p class="container noscript">Šiam puslapiui reikalingas „JavaScript“, kad būtų galima pasirinkti datą ir įrangą.</p>
+  </noscript>
+  <script src="js/gear.js"></script>
+</body>
+</html>

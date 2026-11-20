@@ -1,0 +1,396 @@
+/* ==========================================================
+   Alto Mountain Resort – attractions page
+   Mobile-first. Breakpoints: 640px, 900px
+   ========================================================== */
+
+/* ---------- Tokens ---------- */
+:root {
+  --bg: #f8f8f5;
+  --surface: #ffffff;
+  --forest: #173d33;        /* text, headings, footer */
+  --forest-soft: #5c6f68;   /* secondary text */
+  --sage: #ebf0e6;          /* soft panels, secondary buttons */
+  --line: #dfe3dc;
+  --coral: #e57b5f;         /* primary action */
+  --coral-dark: #d4684b;
+
+  --shadow-sm: 0 1px 2px rgba(23, 61, 51, 0.06), 0 4px 12px rgba(23, 61, 51, 0.04);
+  --shadow-md: 0 2px 4px rgba(23, 61, 51, 0.06), 0 12px 28px rgba(23, 61, 51, 0.10);
+
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --radius-sm: 6px;
+  --radius: 10px;
+  --radius-lg: 14px;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+
+  --container: 82rem;
+  --gutter: 1rem;
+}
+
+/* ---------- Reset / base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--forest);
+  background: linear-gradient(180deg, #eaf0e5 0, var(--bg) 26rem) no-repeat, var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: var(--coral); color: var(--forest); }
+
+img { display: block; max-width: 100%; height: auto; }
+
+h1, h2, h3, p, ul, ol { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+
+a { color: inherit; text-decoration: none; }
+
+:focus-visible {
+  outline: 3px solid var(--coral);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
+
+/* ---------- Layout helpers ---------- */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--space-4);
+  top: -4rem;
+  z-index: 100;
+  padding: var(--space-2) var(--space-4);
+  background: var(--forest);
+  color: #fff;
+  border-radius: var(--radius-sm);
+}
+.skip-link:focus { top: var(--space-2); }
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--forest-soft);
+}
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 2.75rem;               /* 44px touch target */
+  padding: 0 var(--space-5);
+  border: 0;
+  border-radius: var(--radius);
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, transform 0.1s ease;
+}
+.btn:active { transform: translateY(1px); }
+.btn-primary { background: var(--coral); color: var(--forest); box-shadow: 0 1px 2px rgba(23, 61, 51, 0.15); }
+.btn-primary:hover { background: var(--coral-dark); }
+.btn-soft { background: var(--sage); color: var(--forest); }
+.btn-soft:hover { background: #dfe8d8; }
+.btn-lg { min-height: 3rem; }
+
+/* ---------- Header ---------- */
+.site-header { border-bottom: 1px solid rgba(23, 61, 51, 0.1); }
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding-block: var(--space-4);
+}
+
+.brand { display: flex; align-items: baseline; gap: var(--space-3); }
+.brand-name {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  line-height: 1;
+}
+.brand-sub { display: none; font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--forest-soft); }
+
+.header-nav { display: flex; align-items: center; gap: var(--space-2); }
+.header-nav .btn { padding-inline: var(--space-4); }
+.nav-link { padding: var(--space-2) var(--space-3); font-size: 0.9375rem; font-weight: 500; border-radius: var(--radius-sm); }
+.nav-link:hover { background: rgba(23, 61, 51, 0.06); }
+.nav-hide-sm { display: none; }
+
+/* ---------- Page intro ---------- */
+.page-intro { padding-block: var(--space-7) var(--space-5); }
+.page-intro .eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-right: var(--space-2);
+  border-radius: 50%;
+  background: var(--coral);
+}
+
+h1 {
+  margin-block: var(--space-3) var(--space-3);
+  font-size: clamp(1.875rem, 5vw + 0.5rem, 2.75rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+}
+
+.intro-row { display: grid; gap: var(--space-4); }
+.lead { color: var(--forest-soft); max-width: 40rem; font-size: 1.0625rem; }
+
+.steps { display: flex; flex-wrap: wrap; gap: var(--space-2); font-size: 0.8125rem; }
+.steps li {
+  padding: 0.375rem 0.875rem;
+  color: var(--forest-soft);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+.steps [aria-current="step"] { color: #fff; font-weight: 600; background: var(--forest); border-color: var(--forest); }
+
+/* ---------- Booking layout ---------- */
+/* One column: attractions, then the summary. */
+.booking-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "list" "summary";
+  gap: var(--space-5);
+  margin-bottom: var(--space-7);
+}
+
+.attractions {
+  grid-area: list;
+  display: grid;
+  gap: var(--space-4);
+  align-content: start;
+}
+
+/* ---------- Attraction card ---------- */
+.card {
+  display: grid;
+  gap: var(--space-4);
+  padding: var(--space-3);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.15s ease, box-shadow 0.2s ease, background-color 0.15s ease;
+}
+@media (hover: hover) {
+  .card:hover { box-shadow: var(--shadow-md); }
+}
+/* Selected state, no JS needed */
+.card:has(input[type="checkbox"]:checked) {
+  border-color: var(--forest);
+  background: #fbfdf9;
+  box-shadow: 0 0 0 1px var(--forest), var(--shadow-md);
+}
+
+.card-img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  background: var(--sage);
+  border-radius: var(--radius);
+}
+
+.card-body { display: flex; flex-direction: column; gap: var(--space-1); padding: 0 var(--space-2) var(--space-2); }
+
+.card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: var(--space-3); }
+
+h2 { font-size: 1.5rem; line-height: 1.2; font-weight: 700; letter-spacing: -0.01em; margin-top: var(--space-1); }
+
+.info-link { font-size: 0.8125rem; font-weight: 500; white-space: nowrap; padding: var(--space-1) 0; }
+.info-link:hover { text-decoration: underline; }
+
+.card-text { margin-top: var(--space-2); color: var(--forest-soft); }
+.card-note { font-size: 0.8125rem; color: var(--forest-soft); }
+
+.card-controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+  align-items: end;
+}
+.select { grid-column: 1 / -1; }
+
+.field { display: grid; gap: var(--space-2); }
+.field label { font-size: 0.75rem; font-weight: 600; }
+
+.qty {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0 var(--space-3);
+  font: inherit;
+  font-size: 1rem;           /* 16px prevents iOS zoom on focus */
+  text-align: center;
+  color: var(--forest);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.qty:focus { border-color: var(--forest); box-shadow: 0 0 0 3px rgba(23, 61, 51, 0.12); }
+
+/* Visually hidden checkbox, label acts as the button */
+.select input {
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.btn-select { width: 100%; background: var(--sage); }
+.btn-select:hover { background: #dfe8d8; }
+.select input:focus-visible + .btn-select { outline: 3px solid var(--coral); outline-offset: 2px; }
+.select input:checked + .btn-select { background: var(--forest); color: #fff; }
+.when-on { display: none; }
+.select input:checked + .btn-select .when-on { display: inline; }
+.select input:checked + .btn-select .when-off { display: none; }
+
+/* Card layout by breakpoint:
+   phone   – one column, image on top
+   tablet  – one column, image beside the text
+   desktop – three tiles side by side, image on top */
+@media (min-width: 40em) and (max-width: 63.99em) {
+  .card { grid-template-columns: 10rem 1fr; padding: var(--space-4); gap: var(--space-5); }
+  .card-img { aspect-ratio: 5 / 6; align-self: start; }   /* fixed shape: does not stretch when the tile expands */
+  .card-body { padding: 0; }
+}
+@media (min-width: 52em) and (max-width: 63.99em) {
+  .card-controls { grid-template-columns: 8.5rem 8.5rem 1fr; }
+  .select { grid-column: auto; }
+}
+@media (min-width: 64em) {
+  .attractions { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; gap: var(--space-5); }
+  .card-img { aspect-ratio: 4 / 3; }
+}
+
+/* ---------- Expandable description (native <details>, no JS) ---------- */
+.more { margin-top: var(--space-3); }
+
+.more summary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: 2.75rem;               /* 44px touch target */
+  padding: 0 var(--space-4);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  transition: background-color 0.15s ease;
+}
+.more summary::-webkit-details-marker { display: none; }
+.more summary:hover { background: var(--sage); }
+.more summary::after {
+  content: "";
+  width: 0.45rem;
+  height: 0.45rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform 0.15s ease;
+}
+.more[open] summary::after { transform: translateY(2px) rotate(-135deg); }
+
+.more-open { display: none; }
+.more[open] .more-open { display: inline; }
+.more[open] .more-closed { display: none; }
+
+.more-body { display: grid; gap: var(--space-3); padding-top: var(--space-3); color: var(--forest-soft); }
+
+/* ---------- Summary bar ---------- */
+.summary {
+  grid-area: summary;
+  position: sticky;                  /* stays in view while browsing the attractions */
+  bottom: max(var(--space-3), env(safe-area-inset-bottom));
+  z-index: 5;
+  display: grid;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  color: #fff;
+  background: var(--forest);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 30px rgba(15, 43, 36, 0.28);
+}
+.summary-title { font-size: 1.125rem; font-weight: 700; }
+.summary-detail { font-size: 0.875rem; color: #c9d6d0; }
+.summary .btn { width: 100%; }
+
+/* ---------- Footer ---------- */
+.site-footer { background: var(--forest); color: #fff; }
+
+.footer-inner { display: grid; gap: var(--space-6); padding-block: var(--space-7) var(--space-6); }
+.footer-brand .brand-name { margin-bottom: var(--space-3); display: block; font-size: 1.75rem; }
+.footer-brand p:last-child { color: #d7e0dc; }
+
+.footer-nav { display: flex; flex-wrap: wrap; gap: var(--space-3) var(--space-6); font-weight: 500; }
+.footer-nav a { padding-block: var(--space-1); }
+
+.footer-legal { display: grid; gap: var(--space-3); font-size: 0.8125rem; color: #cbd6d1; }
+.footer-legal nav { display: flex; gap: var(--space-5); }
+.site-footer a:hover { text-decoration: underline; }
+
+/* ==========================================================
+   ≥ 640px – tablets
+   ========================================================== */
+@media (min-width: 40em) {
+  :root { --gutter: 2rem; }
+
+  .brand-sub { display: inline; }
+  .nav-hide-sm { display: inline-block; }
+  .header-nav { gap: var(--space-4); }
+
+  .intro-row { grid-template-columns: 1fr auto; align-items: end; }
+
+  .summary { grid-template-columns: 1fr auto; align-items: center; padding: var(--space-4) var(--space-5) var(--space-4) var(--space-6); }
+  .summary .btn { width: auto; min-width: 16rem; }
+
+  .footer-inner { grid-template-columns: 1fr auto; }
+  .footer-legal { grid-column: 1 / -1; grid-auto-flow: column; justify-content: space-between; }
+}
+
+/* ==========================================================
+   ≥ 900px – desktop footer layout
+   ========================================================== */
+@media (min-width: 56.25em) {
+  .footer-inner { grid-template-columns: 1fr 2fr auto; align-items: start; }
+  .footer-nav { justify-content: space-between; }
+  .footer-legal { grid-column: 2 / -1; }
+}

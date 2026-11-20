@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pasirinkite pramogas – Didelės akys kalnų kurortas</title>
+  <meta name="description" content="Pasirinkite pramogas Didelės akys kalnų kurorte: kalnų slidinėjimą, snieglenčių sportą ir čiuožimą ratais.">
+  <link rel="alternate" hreflang="en" href="index.html">
+  <link rel="alternate" hreflang="lt" href="lt.html">
+  <link rel="stylesheet" href="css/attractions.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Pereiti prie turinio</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" id="nav-home" data-action="home" aria-label="Didelės akys kalnų kurortas, pradžia">
+        <span class="brand-name">Didelės akys</span>
+        <span class="brand-sub">Kalnų kurortas</span>
+      </a>
+      <nav class="header-nav" aria-label="Pagrindinė naršymo juosta">
+        <a class="nav-link nav-hide-sm" href="#" id="nav-login" data-action="login">Prisijungti</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <section class="page-intro" aria-labelledby="page-title">
+      <p class="eyebrow">01 / Pasirinkite pramogas</p>
+      <h1 id="page-title">Kas jus atveda į kalnus?</h1>
+      <div class="intro-row">
+        <p class="lead">Įveskite suaugusiųjų ir vaikų skaičių, tada pridėkite pramogas, kurias norite rezervuoti.</p>
+        <ol class="steps" aria-label="Rezervavimo žingsniai">
+          <li aria-current="step" data-step="attractions">1 Pramogos</li>
+          <li data-step="gear-date">2 Įranga ir data</li>
+          <li data-step="reservation">3 Rezervacija</li>
+        </ol>
+      </div>
+    </section>
+
+    <form class="booking" id="booking-form" action="#" method="post">
+      <div class="booking-layout">
+
+        <!-- Each card is one attraction. JS can find everything through the data-* hooks. Descriptions use native <details>, so no JS is needed to expand them. -->
+        <ul class="attractions" id="attractions-list" aria-label="Pramogos">
+
+          <!-- Alpine skiing -->
+          <li class="card" data-attraction="alpine-skiing" data-name="Kalnų slidinėjimas">
+            <img class="card-img" src="images/alpine-skiing.jpg" alt="Du žmonės slidinėja saulėtoje trasoje" width="332" height="392" loading="lazy">
+            <div class="card-body">
+              <div class="card-head">
+                <div>
+                  <p class="eyebrow">01 / Pramoga</p>
+                  <h2>Kalnų slidinėjimas</h2>
+                </div>
+              </div>
+              <p class="card-text">Raskite savo ritmą trasose.</p>
+              <p class="card-note">Įrangą ir laiką trasoje pasirinksite kitame žingsnyje.</p>
+
+              <details class="more">
+                <summary><span class="more-closed">Daugiau informacijos</span><span class="more-open">Mažiau informacijos</span></summary>
+                <div class="more-body">
+                  <p>Mūsų trasos tinka ir pradedantiesiems, ir patyrusiems slidininkams. Švelnūs šlaitai papėdėje – puiki vieta pirmiesiems posūkiams, o aukštesnės trasos suteikia erdvės greičiui ir ilgiems nusileidimams.</p>
+                  <p>Visą dieną veikia keltuvai, o papėdėje rasite įrangos nuomą ir instruktorius, kurie padės parinkti tinkamą dydį ir pasidalys patarimais.</p>
+                </div>
+              </details>
+
+              <div class="card-controls">
+                <div class="field">
+                  <label for="ski-adults">Suaugusieji</label>
+                  <input class="qty" id="ski-adults" name="ski-adults" data-qty="adults" type="number" inputmode="numeric" min="0" max="20" value="0">
+                </div>
+                <div class="field">
+                  <label for="ski-children">Vaikai</label>
+                  <input class="qty" id="ski-children" name="ski-children" data-qty="children" type="number" inputmode="numeric" min="0" max="20" value="0">
+                </div>
+                <div class="select">
+                  <input type="checkbox" id="ski-select" name="attractions" data-select value="alpine-skiing">
+                  <label class="btn btn-select" for="ski-select">
+                    <span class="when-off">+ Pasirinkti pramogą</span>
+                    <span class="when-on">✓ Pasirinkta</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- Snowboarding -->
+          <li class="card" data-attraction="snowboarding" data-name="Snieglenčių sportas">
+            <img class="card-img" src="images/snowboarding.jpg" alt="Snieglentininkas leidžiasi per apsnigtą mišką" width="332" height="392" loading="lazy">
+            <div class="card-body">
+              <div class="card-head">
+                <div>
+                  <p class="eyebrow">02 / Pramoga</p>
+                  <h2>Snieglenčių sportas</h2>
+                </div>
+              </div>
+              <p class="card-text">Raskite savo stilių kalnuose.</p>
+              <p class="card-note">Lentą ir batus pridėsite kitame žingsnyje.</p>
+
+              <details class="more">
+                <summary><span class="more-closed">Daugiau informacijos</span><span class="more-open">Mažiau informacijos</span></summary>
+                <div class="more-body">
+                  <p>Nesvarbu, ar stojate ant lentos pirmą kartą, ar jau mėgstate gilų sniegą – trasos pritaikytos visiems lygiams. Pradedantiesiems skirta lėtesnė zona, kurioje saugu mokytis pusiausvyros.</p>
+                  <p>Lentą ir batus galite išsinuomoti papėdėje – darbuotojai padės juos pritaikyti, kad diena kalnuose būtų patogi.</p>
+                </div>
+              </details>
+
+              <div class="card-controls">
+                <div class="field">
+                  <label for="board-adults">Suaugusieji</label>
+                  <input class="qty" id="board-adults" name="board-adults" data-qty="adults" type="number" inputmode="numeric" min="0" max="20" value="0">
+                </div>
+                <div class="field">
+                  <label for="board-children">Vaikai</label>
+                  <input class="qty" id="board-children" name="board-children" data-qty="children" type="number" inputmode="numeric" min="0" max="20" value="0">
+                </div>
+                <div class="select">
+                  <input type="checkbox" id="board-select" name="attractions" data-select value="snowboarding">
+                  <label class="btn btn-select" for="board-select">
+                    <span class="when-off">+ Pasirinkti pramogą</span>
+                    <span class="when-on">✓ Pasirinkta</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- Snow tubing -->
+          <li class="card" data-attraction="snow-tubing" data-name="Čiuožimas ratais">
+            <img class="card-img" src="images/snow-tubing.jpg" alt="Žmonių grupė čiuožia pripučiamais ratais" width="332" height="392" loading="lazy">
+            <div class="card-body">
+              <div class="card-head">
+                <div>
+                  <p class="eyebrow">03 / Pramoga</p>
+                  <h2>Čiuožimas ratais</h2>
+                </div>
+              </div>
+              <p class="card-text">Žaismingas būdas mėgautis sniegu.</p>
+              <p class="card-note">Datą ir seansą pasirinksite kitame žingsnyje.</p>
+
+              <details class="more">
+                <summary><span class="more-closed">Daugiau informacijos</span><span class="more-open">Mažiau informacijos</span></summary>
+                <div class="more-body">
+                  <p>Čiuožimas ratais – paprasčiausias būdas pasijusti vaiku. Atsisėskite ant pripučiamo rato ir leiskitės žemyn sklandžia, specialiai paruošta trasa.</p>
+                  <p>Pramoga tinka visai šeimai, o ratus į viršų pakelia keltuvas, todėl nereikia lipti į kalną pėsčiomis.</p>
+                </div>
+              </details>
+
+              <div class="card-controls">
+                <div class="field">
+                  <label for="tube-adults">Suaugusieji</label>
+                  <input class="qty" id="tube-adults" name="tube-adults" data-qty="adults" type="number" inputmode="numeric" min="0" max="20" value="0">
+                </div>
+                <div class="field">
+                  <label for="tube-children">Vaikai</label>
+                  <input class="qty" id="tube-children" name="tube-children" data-qty="children" type="number" inputmode="numeric" min="0" max="20" value="0">
+                </div>
+                <div class="select">
+                  <input type="checkbox" id="tube-select" name="attractions" data-select value="snow-tubing">
+                  <label class="btn btn-select" for="tube-select">
+                    <span class="when-off">+ Pasirinkti pramogą</span>
+                    <span class="when-on">✓ Pasirinkta</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+        <!-- Summary. JS updates the title and detail, and can disable the button when nothing is selected. -->
+        <div class="summary" id="summary" data-summary role="region" aria-label="Pasirinkimo santrauka">
+          <div aria-live="polite" aria-atomic="true">
+            <p class="summary-title" data-summary-title>Pasirinkta pramogų: 1</p>
+            <p class="summary-detail" data-summary-detail>Kalnų slidinėjimas · 1 suaugęs · 0 vaikų</p>
+          </div>
+          <button class="btn btn-primary btn-lg" id="summary-continue" data-summary-submit type="submit">Tęsti į įrangą ir datą <span aria-hidden="true">→</span></button>
+        </div>
+      </div>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <p class="brand-name">Didelės akys</p>
+        <p>Šiek tiek arčiau kalnų.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Apatinė naršymo juosta">
+        <a href="#" id="footer-resort" data-action="resort">Kurortas</a>
+        <a href="#" id="footer-getting-here" data-action="getting-here">Kaip atvykti</a>
+        <a href="#" id="footer-contact" data-action="contact">Kontaktai</a>
+        <a href="#" id="footer-facebook" data-action="facebook">Facebook <span aria-hidden="true">↗</span></a>
+      </nav>
+      <div class="footer-legal">
+        <p>© 2026 Didelės akys kalnų kurortas</p>
+        <nav aria-label="Teisinė informacija">
+          <a href="#" id="footer-privacy" data-action="privacy">Privatumo politika</a>
+          <a href="#" id="footer-terms" data-action="terms">Taisyklės ir sąlygos</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
