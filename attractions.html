@@ -19,7 +19,7 @@
         <span class="brand-sub">Kalnų kurortas</span>
       </a>
       <nav class="header-nav" aria-label="Pagrindinė naršymo juosta">
-        <a class="nav-link nav-hide-sm" href="#" id="nav-login" data-action="login">Prisijungti</a>
+        <a class="nav-link nav-hide-sm" href="login.html" id="nav-login" data-action="login">Prisijungti</a>
       </nav>
     </div>
   </header>
@@ -171,8 +171,8 @@
         <!-- Summary. JS updates the title and detail, and can disable the button when nothing is selected. -->
         <div class="summary" id="summary" data-summary role="region" aria-label="Pasirinkimo santrauka">
           <div aria-live="polite" aria-atomic="true">
-            <p class="summary-title" data-summary-title>Pasirinkta pramogų: 1</p>
-            <p class="summary-detail" data-summary-detail>Kalnų slidinėjimas · 1 suaugęs · 0 vaikų</p>
+            <p class="summary-title" data-summary-title>Pasirinkta pramogų: 0</p>
+            <p class="summary-detail" data-summary-detail>Pasirinkite bent vieną pramogą.</p>
           </div>
           <button class="btn btn-primary btn-lg" id="summary-continue" data-summary-submit type="submit">Tęsti į įrangą ir datą <span aria-hidden="true">→</span></button>
         </div>
@@ -184,22 +184,16 @@
     <div class="container footer-inner">
       <div class="footer-brand">
         <p class="brand-name">Didelės akys</p>
-        <p>Šiek tiek arčiau kalnų.</p>
       </div>
       <nav class="footer-nav" aria-label="Apatinė naršymo juosta">
-        <a href="#" id="footer-resort" data-action="resort">Kurortas</a>
-        <a href="#" id="footer-getting-here" data-action="getting-here">Kaip atvykti</a>
-        <a href="#" id="footer-contact" data-action="contact">Kontaktai</a>
-        <a href="#" id="footer-facebook" data-action="facebook">Facebook <span aria-hidden="true">↗</span></a>
+        <a href="mailto:info@didelesakys.lt" id="footer-contact" data-action="contact">Kontaktai</a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" id="footer-facebook" data-action="facebook">Facebook <span aria-hidden="true">↗</span></a>
       </nav>
       <div class="footer-legal">
         <p>© 2026 Didelės akys kalnų kurortas</p>
-        <nav aria-label="Teisinė informacija">
-          <a href="#" id="footer-privacy" data-action="privacy">Privatumo politika</a>
-          <a href="#" id="footer-terms" data-action="terms">Taisyklės ir sąlygos</a>
-        </nav>
       </div>
     </div>
   </footer>
+  <script src="js/attractions.js"></script>
 </body>
 </html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registracija – Didelės akys kalnų kurortas</title>
+  <meta name="description" content="Susikurkite Didelės akys kalnų kurorto paskyrą.">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Pereiti prie turinio</a>
+
+  <header class="auth-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Didelės akys kalnų kurortas, pradžia">
+        <span class="brand-name">Didelės akys</span>
+        <span class="brand-sub">Kalnų kurortas</span>
+      </a>
+      <a class="back-link" href="index.html"><span aria-hidden="true">←</span> Grįžti į pradžią</a>
+    </div>
+  </header>
+
+  <main id="main" class="auth-shell">
+    <section class="auth-card" aria-labelledby="register-title">
+      <div class="auth-copy">
+        <p class="eyebrow">Prisijunkite prie šeimos</p>
+        <h1 id="register-title">Susikurkite paskyrą</h1>
+        <p class="lead">Išsaugokite savo rezervacijas ir sukurkite idealią kalnų dieną vos keliais žingsniais.</p>
+      </div>
+
+      <form class="auth-form" id="register-form" action="#" method="post">
+        <div class="field">
+          <label for="register-name">Vardas ir pavardė</label>
+          <input id="register-name" name="name" type="text" autocomplete="name" placeholder="Vardas Pavardė" required>
+        </div>
+
+        <div class="field">
+          <label for="register-email">El. paštas</label>
+          <input id="register-email" name="email" type="email" autocomplete="email" placeholder="vardas@example.com" required>
+        </div>
+
+        <div class="field">
+          <label for="register-password">Slaptažodis</label>
+          <div class="password-wrap">
+            <input id="register-password" name="password" type="password" autocomplete="new-password" placeholder="Mažiausiai 8 simboliai" minlength="8" required>
+            <button class="password-toggle" type="button" data-password-toggle="register-password" aria-label="Rodyti slaptažodį">Rodyti</button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="register-confirm">Pakartokite slaptažodį</label>
+          <div class="password-wrap">
+            <input id="register-confirm" name="confirm-password" type="password" autocomplete="new-password" placeholder="Pakartokite slaptažodį" minlength="8" required>
+            <button class="password-toggle" type="button" data-password-toggle="register-confirm" aria-label="Rodyti slaptažodį">Rodyti</button>
+          </div>
+          <p class="form-error" id="password-error" role="alert"></p>
+        </div>
+
+        <label class="check-row">
+          <input type="checkbox" name="terms" required>
+          <span>Sutinku su <a href="#">taisyklėmis ir sąlygomis</a></span>
+        </label>
+
+        <button class="btn btn-primary btn-wide" type="submit">Susikurti paskyrą <span aria-hidden="true">→</span></button>
+        <p class="auth-switch">Jau turite paskyrą? <a href="login.html">Prisijungti</a></p>
+      </form>
+    </section>
+
+    <aside class="auth-visual" aria-label="Didelės akys kalnų kurortas">
+      <img src="images/alpine-valley.jpg" alt="Slėnis tarp snieguotų kalnų">
+      <div class="visual-caption">
+        <p class="eyebrow">Kiekvienas kelias prasideda čia</p>
+        <p>Pasirinkite pramogas, įrangą ir datą viename rezervacijos kelione.</p>
+      </div>
+    </aside>
+  </main>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>

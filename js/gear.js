@@ -27,6 +27,12 @@
   var sumDetail = document.getElementById("sum-detail");
   var submit = document.getElementById("sum-submit");
   var gearItems = Array.prototype.slice.call(document.querySelectorAll(".gear"));
+  var savedAttractions = [];
+  try {
+    savedAttractions = JSON.parse(sessionStorage.getItem("dideles-akys-attractions") || "[]");
+  } catch (error) {
+    savedAttractions = [];
+  }
 
   function pad(n) { return n < 10 ? "0" + n : String(n); }
   function iso(d) { return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
@@ -151,6 +157,11 @@
   function update() {
     var gear = readGear();
     var session = document.querySelector('#sessions input:checked');
+    var attractionText = savedAttractions.length
+      ? "Pramogos: " + savedAttractions.map(function (item) {
+          return item.name;
+        }).join(", ")
+      : "";
     var dateObj = null;
     if (state.date) {
       var p = state.date.split("-");
@@ -166,11 +177,11 @@
       : "Pasirinkite datą";
 
     if (gear.missing.length) {
-      sumDetail.textContent = "Pasirinkite dydį: " + gear.missing.join(", ");
+      sumDetail.textContent = (attractionText ? attractionText + " · " : "") + "Pasirinkite dydį: " + gear.missing.join(", ");
     } else if (gear.lines.length) {
-      sumDetail.textContent = "Įranga: " + gear.lines.join(", ") + " · " + eur(gear.total) + " už dieną";
+      sumDetail.textContent = (attractionText ? attractionText + " · " : "") + "Įranga: " + gear.lines.join(", ") + " · " + eur(gear.total) + " už dieną";
     } else {
-      sumDetail.textContent = "Įranga nepasirinkta";
+      sumDetail.textContent = attractionText || "Įranga nepasirinkta";
     }
 
     gearItems.forEach(function (item) {

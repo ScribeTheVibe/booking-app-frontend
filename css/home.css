@@ -287,18 +287,15 @@ h3 { font-size: 1.25rem; line-height: 1.2; font-weight: 700; letter-spacing: -0.
   transition: border-color 0.15s ease, box-shadow 0.2s ease;
 }
 @media (hover: hover) {
-  .card:hover { box-shadow: var(--shadow-md); border-color: var(--forest); }
+  .card:hover { box-shadow: var(--shadow-sm); }
 }
-.card:has(a:focus-visible) { border-color: var(--forest); }
-
-.card a {
+.card article {
   display: grid;
   gap: var(--space-1);
   align-content: start;
   padding: var(--space-3);
   border-radius: var(--radius-lg);
 }
-.card a:focus-visible { outline-offset: 3px; }
 
 .card img {
   width: 100%;
@@ -319,11 +316,10 @@ h3 { font-size: 1.25rem; line-height: 1.2; font-weight: 700; letter-spacing: -0.
 .card .muted, .card__note { padding-inline: var(--space-2); }
 .card .muted { margin-top: var(--space-1); }
 .card__note { margin-top: var(--space-1); padding-bottom: var(--space-2); font-size: 0.8125rem; color: var(--forest-soft); }
-.card a:hover h3 { text-decoration: underline; text-underline-offset: 3px; }
 
 /* Tablet: image beside the text */
 @media (min-width: 40em) and (max-width: 860px) {
-  .card a { grid-template-columns: 10rem 1fr; column-gap: var(--space-5); padding: var(--space-4); }
+  .card article { grid-template-columns: 10rem 1fr; column-gap: var(--space-5); padding: var(--space-4); }
   .card img { grid-row: 1 / span 3; aspect-ratio: 5 / 6; align-self: start; margin-bottom: 0; }
   .card__title, .card .muted, .card__note { padding-inline: 0; grid-column: 2; }
 }
