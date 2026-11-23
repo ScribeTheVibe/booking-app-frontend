@@ -17,7 +17,7 @@
         <span class="brand-name">Didelės akys</span>
         <span class="brand-sub">Kalnų kurortas</span>
       </a>
-      <nav class="header-nav" aria-label="Pagrindinė naršymo juosta">
+      <nav class="site-nav" aria-label="Pagrindinė naršymo juosta">
         <a class="nav-link nav-hide-sm" href="login.html">Prisijungti</a>
       </nav>
     </div>
@@ -46,8 +46,8 @@
           <p class="panel-sub">Galite atsinešti savo įrangą arba išsinuomoti ją papėdėje. Nuoma skaičiuojama už dieną.</p>
 
           <ul class="gear-list" id="gear-list">
-            <li class="gear" data-id="ski-set" data-name="Slidžių komplektas" data-price="40" data-size="boot">
-              <div class="gear-head"><h3>Slidžių komplektas</h3><p class="gear-price">40 € / dieną</p></div>
+            <li class="gear" data-id="ski-set" data-name="Slidžių komplektas" data-size="boot">
+              <div class="gear-head"><h3>Slidžių komplektas</h3><p class="gear-price" data-gear-price="ski-set"></p></div>
               <p class="gear-desc">Slidės, batai ir lazdos</p>
               <div class="gear-controls">
                 <select class="gear-size" name="ski-set-size" aria-label="Slidžių komplektas: batų dydis"></select>
@@ -59,8 +59,8 @@
               </div>
               <p class="gear-hint" role="alert">Pasirinkite dydį.</p>
             </li>
-            <li class="gear" data-id="skis" data-name="Tik slidės" data-price="30" data-size="length">
-              <div class="gear-head"><h3>Tik slidės</h3><p class="gear-price">30 € / dieną</p></div>
+            <li class="gear" data-id="skis" data-name="Tik slidės" data-size="length">
+              <div class="gear-head"><h3>Tik slidės</h3><p class="gear-price" data-gear-price="skis"></p></div>
               <p class="gear-desc">Slidės ir lazdos</p>
               <div class="gear-controls">
                 <select class="gear-size" name="skis-size" aria-label="Tik slidės: ilgis"></select>
@@ -72,8 +72,8 @@
               </div>
               <p class="gear-hint" role="alert">Pasirinkite ilgį.</p>
             </li>
-            <li class="gear" data-id="boots" data-name="Slidinėjimo batai" data-price="20" data-size="boot">
-              <div class="gear-head"><h3>Slidinėjimo batai</h3><p class="gear-price">20 € / dieną</p></div>
+            <li class="gear" data-id="boots" data-name="Slidinėjimo batai" data-size="boot">
+              <div class="gear-head"><h3>Slidinėjimo batai</h3><p class="gear-price" data-gear-price="boots"></p></div>
               <p class="gear-desc">Tik batai</p>
               <div class="gear-controls">
                 <select class="gear-size" name="boots-size" aria-label="Slidinėjimo batai: dydis"></select>
@@ -85,8 +85,8 @@
               </div>
               <p class="gear-hint" role="alert">Pasirinkite dydį.</p>
             </li>
-            <li class="gear" data-id="helmet" data-name="Šalmas" data-price="10" data-size="helmet">
-              <div class="gear-head"><h3>Šalmas</h3><p class="gear-price">10 € / dieną</p></div>
+            <li class="gear" data-id="helmet" data-name="Šalmas" data-size="helmet">
+              <div class="gear-head"><h3>Šalmas</h3><p class="gear-price" data-gear-price="helmet"></p></div>
               <p class="gear-desc">Rekomenduojamas kiekvienam slidininkui</p>
               <div class="gear-controls">
                 <select class="gear-size" name="helmet-size" aria-label="Šalmas: dydis"></select>
@@ -106,7 +106,7 @@
           <!-- 2. Date (weekends only, built by gear.js) -->
           <section class="panel" aria-labelledby="date-title">
             <div class="panel-head"><span class="panel-num">02</span><h2 id="date-title">Pasirinkite datą</h2></div>
-            <p class="panel-sub">Vienos dienos rezervacijos. Kurortas veikia tik šeštadieniais ir sekmadieniais.</p>
+            <p class="panel-sub">Vienos dienos rezervacijos penktadieniais, šeštadieniais ir sekmadieniais.</p>
 
             <div class="cal-head">
               <p class="cal-title" id="cal-title" aria-live="polite"></p>
@@ -116,7 +116,7 @@
               </div>
             </div>
 
-            <div class="cal-dow" aria-hidden="true"><span>Šeštadienis</span><span>Sekmadienis</span></div>
+            <div class="cal-dow" aria-hidden="true"><span>Penktadienis</span><span>Šeštadienis</span><span>Sekmadienis</span></div>
             <fieldset class="cal-grid" id="cal-grid">
               <legend class="sr-only">Savaitgalio datos</legend>
             </fieldset>
@@ -129,25 +129,29 @@
 
             <fieldset class="sessions" id="sessions">
               <legend class="sr-only">Seansas</legend>
-              <label class="session">
-                <input type="radio" name="session" value="full-day" data-label="Visa diena" data-hours="09:00–20:00" checked>
-                <span><strong>Visa diena</strong><small>09:00–20:00</small></span>
-                <span class="session-price">30 €</span>
-              </label>
-              <label class="session">
-                <input type="radio" name="session" value="morning" data-label="Rytas" data-hours="09:00–13:00">
-                <span><strong>Rytas</strong><small>09:00–13:00</small></span>
-                <span class="session-price">20 €</span>
-              </label>
-              <label class="session">
-                <input type="radio" name="session" value="evening" data-label="Vakaras" data-hours="16:00–20:00">
-                <span><strong>Vakaras</strong><small>16:00–20:00</small></span>
-                <span class="session-price">25 €</span>
-              </label>
             </fieldset>
-            <p class="panel-note">Įrangos nuoma skaičiuojama už dieną, o pramogos kaina priklauso nuo seanso.</p>
+            <p class="panel-note">Įrangos nuoma skaičiuojama už dieną. Seanso kaina taikoma vienam asmeniui.</p>
           </section>
         </div>
+
+        <section class="panel customer-panel" aria-labelledby="customer-title">
+          <div class="panel-head"><span class="panel-num">04</span><h2 id="customer-title">Jūsų kontaktiniai duomenys</h2></div>
+          <p class="panel-sub">Įveskite duomenis, kurie bus pateikti rezervacijos patvirtinime.</p>
+          <div class="customer-fields">
+            <div class="field">
+              <label for="customer-name">Vardas ir pavardė</label>
+              <input id="customer-name" name="customer-name" type="text" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="customer-email">El. paštas</label>
+              <input id="customer-email" name="customer-email" type="email" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="customer-phone">Telefono numeris</label>
+              <input id="customer-phone" name="customer-phone" type="tel" autocomplete="tel" required>
+            </div>
+          </div>
+        </section>
 
         <a class="back-link" href="attractions.html"><span aria-hidden="true">←</span> Atgal į pramogas</a>
 
@@ -181,6 +185,7 @@
   <noscript>
     <p class="container noscript">Šiam puslapiui reikalingas „JavaScript“, kad būtų galima pasirinkti datą ir įrangą.</p>
   </noscript>
+  <script src="js/mockBookingService.js"></script>
   <script src="js/gear.js"></script>
 </body>
 </html>

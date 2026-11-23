@@ -16,7 +16,10 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
+html {
+  -webkit-text-size-adjust: 100%;
+  scrollbar-gutter: stable;
+}
 body {
   margin: 0;
   min-height: 100vh;
@@ -35,13 +38,56 @@ button, input { font: inherit; }
 .skip-link { position: absolute; left: 1rem; top: -4rem; z-index: 100; padding: .5rem 1rem; background: var(--forest); color: #fff; border-radius: 6px; }
 .skip-link:focus { top: .5rem; }
 
-.auth-header { border-bottom: 1px solid rgba(23, 61, 51, .1); }
-.header-inner { min-height: 4.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
-.brand { display: flex; align-items: baseline; gap: .75rem; }
-.brand-name { font-size: 1.5rem; font-weight: 800; letter-spacing: .01em; line-height: 1; }
-.brand-sub { display: none; font-size: .6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--forest-soft); }
-.back-link { font-size: .875rem; font-weight: 600; color: var(--forest-soft); }
-.back-link:hover { color: var(--forest); }
+/* ---------- Header (identical on every page) ---------- */
+.site-header,
+.auth-header {
+  z-index: 20;
+  background: rgba(248, 248, 245, 0.94);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(23, 61, 51, 0.1);
+}
+
+.header-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 4.5rem;
+}
+.brand { display: flex; align-items: baseline; gap: var(--space-3, .75rem); }
+.brand-name {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  line-height: 1;
+}
+.brand-sub {
+  display: none;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--forest-soft);
+}
+.site-nav,
+.auth-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--forest);
+}
+.nav-link:hover { background: rgba(23, 61, 51, .06); }
 
 .auth-shell {
   width: calc(100% - 2rem);
@@ -105,6 +151,7 @@ h1 { margin: 0; max-width: 28rem; font-size: clamp(1.875rem, 5vw, 3rem); line-he
 .visual-caption > p:last-child { max-width: 28rem; font-size: 1.125rem; font-weight: 700; }
 
 @media (min-width: 40rem) {
+  :root { --gutter: 2rem; }
   .brand-sub { display: inline; }
   .auth-shell { width: calc(100% - 3rem); }
   .auth-card { padding: 2.5rem; }

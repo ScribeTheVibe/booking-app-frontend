@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Patvirtinkite rezervaciją – Didelės akys kalnų kurortas</title>
+  <meta name="description" content="Peržiūrėkite ir patvirtinkite savo Didelės akys kalnų kurorto rezervacijos projektą.">
+  <link rel="stylesheet" href="css/attractions.css">
+  <link rel="stylesheet" href="css/gear.css">
+  <link rel="stylesheet" href="css/confirmation.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Pereiti prie turinio</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Didelės akys kalnų kurortas, pradžia">
+        <span class="brand-name">Didelės akys</span>
+        <span class="brand-sub">Kalnų kurortas</span>
+      </a>
+      <nav class="site-nav" aria-label="Pagrindinė naršymo juosta">
+        <a class="nav-link nav-hide-sm" href="login.html">Prisijungti</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <section class="page-intro" aria-labelledby="page-title">
+      <p class="eyebrow">03 / Rezervacija</p>
+      <h1 id="page-title">Peržiūrėkite savo rezervaciją</h1>
+      <div class="intro-row">
+        <p class="lead">Patikrinkite informaciją prieš patvirtindami. Rezervacija dar nėra galutinai patvirtinta.</p>
+        <ol class="steps" aria-label="Rezervavimo žingsniai">
+          <li><a href="attractions.html">1 Pramogos</a></li>
+          <li><a href="gear.html">2 Įranga ir data</a></li>
+          <li aria-current="step">3 Rezervacija</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="draft-missing" class="notice-panel" hidden aria-labelledby="draft-missing-title">
+      <h2 id="draft-missing-title">Rezervacijos projektas nerastas</h2>
+      <p>Jūsų rezervacijos duomenų neradome. Pradėkite iš naujo ir pasirinkite pramogas, įrangą bei datą.</p>
+      <a class="btn btn-primary" href="attractions.html">Pradėti rezervaciją <span aria-hidden="true">→</span></a>
+    </section>
+
+    <section id="confirmation-content" hidden aria-label="Rezervacijos informacija">
+      <div id="validation-panel" class="notice-panel" hidden>
+        <h2 id="validation-title">Patikrinkite rezervacijos duomenis</h2>
+        <div id="validation-content" aria-live="polite"></div>
+      </div>
+
+      <div id="feedback" class="feedback" role="alert" aria-live="assertive" hidden></div>
+
+      <section id="success-panel" class="success-panel" hidden aria-labelledby="success-title">
+        <p class="eyebrow">Rezervacija patvirtinta</p>
+        <h2 id="success-title" tabindex="-1">Iki pasimatymo kalnuose!</h2>
+        <p>Jūsų rezervacijos numeris: <strong id="booking-reference"></strong></p>
+      </section>
+
+      <div class="confirmation-layout">
+        <section class="panel confirmation-summary" aria-labelledby="summary-title">
+          <div class="panel-head"><span class="panel-num">01</span><h2 id="summary-title">Apsilankymo informacija</h2></div>
+          <dl class="summary-list">
+            <div><dt>Data</dt><dd id="summary-date"></dd></div>
+            <div><dt>Laikas</dt><dd id="summary-slot"></dd></div>
+            <div><dt>Žmonių skaičius</dt><dd id="summary-party"></dd></div>
+            <div><dt>Pramogos</dt><dd id="summary-attractions"></dd></div>
+          </dl>
+
+          <h3 class="subheading">Nuomojama įranga</h3>
+          <p id="no-equipment" class="muted" hidden>Įranga nenuomojama.</p>
+          <ul id="equipment-list" class="equipment-list"></ul>
+
+          <h3 class="subheading">Kainos</h3>
+          <dl class="price-list">
+            <div><dt id="slot-price-label">Seanso kaina</dt><dd id="slot-total"></dd></div>
+            <div><dt>Įrangos suma</dt><dd id="equipment-total"></dd></div>
+            <div class="grand-total"><dt>Iš viso</dt><dd id="grand-total"></dd></div>
+          </dl>
+        </section>
+
+        <aside class="panel confirmation-side">
+          <section aria-labelledby="customer-title">
+            <div class="panel-head"><span class="panel-num">02</span><h2 id="customer-title">Kontaktiniai duomenys</h2></div>
+            <dl class="summary-list customer-summary">
+              <div><dt>Vardas ir pavardė</dt><dd id="customer-name"></dd></div>
+              <div><dt>El. paštas</dt><dd id="customer-email"></dd></div>
+              <div><dt>Telefonas</dt><dd id="customer-phone"></dd></div>
+            </dl>
+          </section>
+
+          <section class="policy" aria-labelledby="policy-title">
+            <h2 id="policy-title">Keitimo sąlygos</h2>
+            <p id="reschedule-policy"></p>
+          </section>
+
+          <div id="confirm-controls" class="confirm-controls">
+            <label class="terms-row">
+              <input id="terms-accepted" type="checkbox">
+              <span>Sutinku su <a href="#">taisyklėmis</a> ir suprantu, kad rezervacijos neatšaukiamos, o datą galima keisti tik iki nurodyto termino.</span>
+            </label>
+            <button id="confirm-button" class="btn btn-primary btn-lg btn-wide" type="button" disabled>Patvirtinti rezervaciją <span aria-hidden="true">→</span></button>
+            <a class="btn btn-soft btn-wide" href="gear.html"><span aria-hidden="true">←</span> Grįžti ir taisyti duomenis</a>
+          </div>
+          <a id="success-home-link" class="btn btn-primary btn-wide" href="index.html" hidden>Grįžti į pradžią</a>
+        </aside>
+      </div>
+    </section>
+
+    <details class="mock-controls">
+      <summary>Testavimo valdikliai (tik demonstracijai)</summary>
+      <div class="mock-controls__body">
+        <label class="terms-row"><input id="mock-auth" type="checkbox"><span>Imituoti, kad naudotojas prisijungęs</span></label>
+        <label for="mock-failure">Imituojama klaida</label>
+        <select id="mock-failure">
+          <option value="">Nėra</option>
+          <option value="slot-unavailable">Seansas nepasiekiamas</option>
+          <option value="network-error">Tinklo klaida</option>
+          <option value="login-failed">Prisijungimo klaida</option>
+        </select>
+        <p class="muted">Valdikliai ir mock būsena saugomi tik šios naršyklės sesijoje.</p>
+      </div>
+    </details>
+  </main>
+
+  <dialog id="login-dialog" class="login-dialog" aria-labelledby="login-title">
+    <form id="mock-login-form" method="dialog">
+      <button class="dialog-close" type="button" id="login-close" aria-label="Uždaryti prisijungimo langą">×</button>
+      <p class="eyebrow">Prieš patvirtinant</p>
+      <h2 id="login-title">Prisijunkite prie paskyros</h2>
+      <p class="muted">Rezervacijos projektas bus išsaugotas, o prisijungus patvirtinimas bus tęsiamas automatiškai.</p>
+      <div class="field">
+        <label for="mock-login-email">El. paštas</label>
+        <input id="mock-login-email" name="email" type="email" autocomplete="email" required>
+      </div>
+      <div class="field">
+        <label for="mock-login-password">Slaptažodis</label>
+        <input id="mock-login-password" name="password" type="password" autocomplete="current-password" required>
+      </div>
+      <p id="login-feedback" class="feedback" role="alert" aria-live="assertive" hidden></p>
+      <button id="login-submit" class="btn btn-primary btn-wide" type="submit">Prisijungti ir tęsti</button>
+    </form>
+  </dialog>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand"><p class="brand-name">Didelės akys</p></div>
+      <nav class="footer-nav" aria-label="Apatinė naršymo juosta">
+        <a href="mailto:info@didelesakys.lt">Kontaktai</a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook <span aria-hidden="true">↗</span></a>
+      </nav>
+      <div class="footer-legal"><p>© 2026 Didelės akys kalnų kurortas</p></div>
+    </div>
+  </footer>
+
+  <noscript><p class="container noscript">Šiam puslapiui reikalingas „JavaScript“, kad būtų galima peržiūrėti rezervaciją.</p></noscript>
+  <script src="js/mockBookingService.js"></script>
+  <script src="js/confirmation.js"></script>
+</body>
+</html>
